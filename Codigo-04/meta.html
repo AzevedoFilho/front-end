@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR" >
+    <head>
+        <title>Código 02 - Sorteador</title>
+        <meta charset="utf-8">
+
+        <meta name="author"     content="Bravoow Tecnologia">
+        <meta name="generator"  content="Brackets">
+        <meta name="Keywords"   content="HTML5, Bravoow, Front-end">
+        <meta name="description"    content="Sorteador aleatório">
+        <meta name="application-name" content="Sorteador de numeros!">
+        
+        <!-- Para dar refresh a cada 8 segundos na página.-->
+        
+        <meta http-equiv="refresh" content="8">
+        
+        <script>
+            function sorteioNumero()
+            {
+                sorteio.innerHTML = Math.round(Math.random() * 50);
+            }
+            window.onload = sorteioNumero;
+        </script>
+        
+        
+    </head>
+    <body>
+        <p id="sorteio"></p>
+    </body>
+</html>
