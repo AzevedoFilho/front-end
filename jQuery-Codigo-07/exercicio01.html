@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <title>Curso jQuery Fundamental</title>
+        <style>
+			#janela { width:300px; height:300px; background-color:#069; margin-top:20px }
+		</style>
+        
+        <script src="jquery-3.2.1.min.js"></script>
+        <script>
+
+			 function  setDoisDigitos(tempo) {
+                if (tempo < 10) {
+                    return "0" + tempo;
+                } else {
+                    return tempo;
+                }
+            }
+            var agora = new Date();
+            console.log(setDoisDigitos(agora.getHours()) + ":" + setDoisDigitos(agora.getMinutes()) + ":" + setDoisDigitos(agora.getSeconds()));
+
+			$( function(e) {			
+				$('#mostrar').click( mostrarObjeto )
+				$('#esconder').click( esconderObjeto )
+				$('#reverso').click( reverterObjeto )
+			})
+			
+			function esconderObjeto() {
+				$('#janela').hide(300);
+			}
+
+			function mostrarObjeto() {
+				$('#janela').show(2000,function(e){
+					alert("finalizou a animação!");
+					console.log("finalizou a animação!");
+				});
+			}
+
+			function reverterObjeto() {
+				$('#janela').toggle(300);
+			}
+
+			//S40-A176
+		</script>        
+    </head>
+
+    <body>
+        <input type="button" id="mostrar" 	value="Mostrar" />
+        <input type="button" id="esconder" 	value="Esconder" />
+        <input type="button" id="reverso" 	value="Reverso" />
+        
+        <div id="janela"></div>
+    </body>
+
+</html>
